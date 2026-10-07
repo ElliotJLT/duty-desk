@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The channel · Duty desk</title>
+<meta name="description" content="A real French air traffic control strike, played through a tour operator's incident channel. The strike was called off. The flights were cancelled anyway.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 16 16%22%3E%3Crect width=%2216%22 height=%2216%22 rx=%224%22 fill=%22%231C3038%22/%3E%3Ccircle cx=%228%22 cy=%228%22 r=%223%22 fill=%22%23E3C84F%22/%3E%3C/svg%3E">
+<link rel="stylesheet" href="slack.css">
+<link rel="stylesheet" href="site.css">
+<link rel="stylesheet" href="home.css">
+</head>
+<body data-page="channel">
+
+<nav class="sitebar" aria-label="Site">
+  <a class="brand" href="index.html"><i class="sq desk-sq" aria-hidden="true"></i>Duty desk</a>
+  <a class="talk" data-talk href="index.html#talk">Talk to Elliot</a>
+</nav>
+
+
+<header class="page">
+  <h1>Strike off, flights still cancelled.</h1>
+  <p class="sub">The French air traffic control strike was called off on Wednesday. French airports still lost around half of Thursday's flights. Here's that week in a small tour operator's Slack.</p>
+</header>
+
+<div class="nav">
+  <nav class="moments" id="moments" aria-label="Moments"></nav>
+</div>
+<p class="context" id="context" aria-live="polite"></p>
+
+<div class="app" role="region" aria-label="Incident channel, simulated">
+  <div class="topbar" aria-hidden="true"><span class="search">Search Fernway Travel</span></div>
+  <aside class="side" aria-label="Workspace">
+    <div class="ws"><b>Fernway Travel</b></div>
+    <p class="side-h">Channels</p>
+    <ul>
+      <li># general</li>
+      <li class="unread"># ops-daily<em>3</em></li>
+      <li class="on"># inc-french-atc-strike</li>
+      <li># trip-riviera-apr</li>
+      <li># trip-andalusia-apr</li>
+    </ul>
+    <p class="side-h">Direct messages</p>
+    <ul>
+      <li><i class="dot" style="background:#C9524A"></i>Hannah <span class="you">you</span></li>
+      <li><i class="dot" style="background:#3E6675"></i>Sam</li>
+      <li><i class="dot" style="background:#5E7F1F"></i>Nadia</li>
+    </ul>
+    <p class="side-h">Apps</p>
+    <ul>
+      <li><i class="sq desk-sq"></i>Duty desk</li>
+      <li><i class="sq news-sq"></i>News feed</li>
+      <li><i class="sq wa-sq"></i>WhatsApp bridge</li>
+    </ul>
+  </aside>
+
+  <main class="chan">
+    <div class="chan-head">
+      <div><b># inc-french-atc-strike</b><span class="topic" id="topic"></span></div>
+      <div class="members" aria-hidden="true"><i style="background:#C9524A">H</i><i style="background:#3E6675">S</i><i style="background:#5E7F1F">N</i><i class="d">D</i><span>+ 2 DMCs, 3 leaders via WhatsApp</span></div>
+    </div>
+    <ol class="msgs" id="msgs" aria-label="Messages" tabindex="0"></ol>
+    <div class="composer">
+      <span class="fake-input">Message #inc-french-atc-strike</span>
+      <div class="ctl">
+        <button id="back" class="b" aria-label="Previous message">←</button>
+        <button id="play" class="b">Play</button>
+        <button id="next" class="b primary">Start</button>
+      </div>
+    </div>
+  </main>
+
+  <aside class="pane" aria-label="Still open" tabindex="0">
+    <div class="pane-h"><b>Still open</b><span id="open-count"></span></div>
+    <p class="legend"><i class="on"></i>New flight <i class="on"></i>Transfer <i class="on"></i>With group</p>
+    <div id="pane"></div>
+    <p class="pane-foot">Kept by the desk. A guest leaves this list only when the right person confirms them.</p>
+  </aside>
+</div>
+
+<p class="note">Simulated. The news items are real and link to their sources. Fernway Travel, its staff, guests, DMCs, trip leaders, the airlines "Solent Air" and "Brightwing" and every message in the channel are made up. <a href="how.html#real">What's real and what isn't</a></p>
+
+<script type="module" src="talk.js"></script>
+<script type="module" src="story-app.js"></script>
+</body>
+</html>

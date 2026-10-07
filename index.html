@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Duty desk · Every guest, accounted for</title>
+<meta name="description" content="An AI duty desk for small-group tour operators. When a guest's flight changes, it tells the local agent and the trip leader, chases the replies, and keeps one list of who's still unaccounted for.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Schibsted+Grotesk:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 16 16%22%3E%3Crect width=%2216%22 height=%2216%22 rx=%224%22 fill=%22%231C3038%22/%3E%3Ccircle cx=%228%22 cy=%228%22 r=%223%22 fill=%22%23E3C84F%22/%3E%3C/svg%3E">
+<link rel="stylesheet" href="slack.css">
+<link rel="stylesheet" href="site.css">
+<link rel="stylesheet" href="home.css">
+</head>
+<body data-page="home">
+
+<nav class="sitebar" aria-label="Site">
+  <a class="brand" href="index.html"><i class="sq desk-sq" aria-hidden="true"></i>Duty desk</a>
+  <a class="talk" data-talk href="#talk">Talk to Elliot</a>
+</nav>
+
+<header class="intro">
+  <p class="kicker">For small-group tour operators</p>
+  <h1>Every guest, <em>accounted for.</em></h1>
+  <p class="lede">When a guest's flight changes, the desk tells your local agent and trip leader, chases the replies, and keeps one list of who's still unaccounted for. Your team makes every call.</p>
+  <a class="cta" href="#try">Try a real strike week ↓</a>
+</header>
+
+<section id="try" class="sim" aria-label="Simulation">
+  <div class="sim-head">
+    <div>
+      <p class="kicker">Try it · 2 minutes</p>
+      <h2>The French air traffic control strike, April 2024</h2>
+      <p class="how-to">You're on the duty desk at a made-up operator with three trips running. The news is real. Step through the week and watch the list.</p>
+    </div>
+    <div class="steps" id="days" role="tablist" aria-label="Day"></div>
+  </div>
+
+  <div class="sim-body">
+    <aside class="story" aria-live="polite">
+      <p class="day-title" id="day-title"></p>
+      <div class="beat news-beat"><span class="tag news">In the news</span><p id="news"></p></div>
+      <div class="beat desk-beat"><span class="tag desk">The desk</span><p id="desk"></p></div>
+      <div class="beat without-beat"><span class="tag without">Without it</span><p id="without"></p></div>
+      <div class="nav-row">
+        <button id="prev" class="b">← Back</button>
+        <button id="next" class="b primary">Next day →</button>
+      </div>
+    </aside>
+
+    <div class="board-card">
+      <div class="tiles" id="tiles"></div>
+      <div class="trips" id="trips"></div>
+      <p class="board-foot">Each status is set by the person who can confirm it: the guest for their new flight, the local agent for the pickup, the trip leader for "with the group". <a href="channel.html">See every message behind it →</a></p>
+    </div>
+  </div>
+</section>
+
+<section class="three">
+  <div><p class="kicker">Before</p><h3>It watches the flights your guests gave you</h3><p>From the pre-trip form, your CRM or an email. It reads the messy ones too: "landing Tuesday morning on the easyJet".</p></div>
+  <div><p class="kicker">During</p><h3>It tells the right people and gets a name back</h3><p>Your local agent and trip leader hear on WhatsApp or email. "All sorted" doesn't count until it names the guest.</p></div>
+  <div><p class="kicker">After</p><h3>It keeps the record you'll be asked for</h3><p>Who knew what, when, and who decided. Every disruption becomes a logged near-miss your safety lead can use.</p></div>
+</section>
+
+<section class="pair">
+  <div>
+    <h2>The desk chases. Your team decides.</h2>
+    <p>It drafts every guest message and every change for a named person to approve. It never books, pays or messages a guest on its own. It closes an incident only when every guest is confirmed, not when the news moves on.</p>
+  </div>
+  <div>
+    <h2>Works where you already work.</h2>
+    <p>Your team in Slack. Local agents, trip leaders and guests on WhatsApp and email, so nobody outside your team installs anything. It reads from your booking system or a spreadsheet and replaces nothing.</p>
+  </div>
+</section>
+
+<section id="talk" class="talk-band">
+  <div>
+    <h2>Send me your last messy disruption.</h2>
+    <p>I'll write it up as a timeline of what was open when, and show you what the desk would have caught. Twenty minutes, no guest data needed.</p>
+    <p class="who">I'm Elliot. I ran operations at Flash Pack, including its safety and crisis process, and I've since built AI products in regulated businesses.</p>
+  </div>
+  <a class="cta light" data-talk href="#talk">Talk to Elliot</a>
+</section>
+
+<footer class="foot">
+  <p>The simulation is made up: Fernway Travel, its staff, guests, local agents, trip leaders and airlines don't exist. The news items are real and link to their sources. This is an early project, not a product you can buy yet. <a href="how.html">How it works, in more detail</a>.</p>
+</footer>
+
+<script type="module" src="talk.js"></script>
+<script type="module" src="board.js"></script>
+</body>
+</html>

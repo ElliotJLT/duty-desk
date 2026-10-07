@@ -1,0 +1,60 @@
+/* Shared nav, the board front page and the offer band. Builds on slack.css tokens.
+   Status always carries an icon and a label; colour is the third cue, not the first. */
+.topnav{max-width:1240px;margin:0 auto;display:flex;align-items:center;gap:20px;padding:18px 0 6px}
+.brand{display:flex;align-items:center;gap:8px;font-weight:800;color:var(--ink);text-decoration:none;font-size:16px}
+.brand .sq{width:22px;height:22px;border-radius:6px}
+.tabs{display:flex;gap:4px;background:#fff;border:1px solid #DDDBD0;border-radius:999px;padding:3px}
+.tabs a{font-weight:600;font-size:14px;color:var(--muted);text-decoration:none;padding:6px 14px;border-radius:999px}
+.tabs a:hover{color:var(--ink)}
+.tabs a[aria-current="page"]{background:var(--ink);color:#fff}
+.book{margin-left:auto;background:#007A5A;color:#fff;font-weight:700;font-size:14px;text-decoration:none;border-radius:8px;padding:8px 14px}
+.book:hover{background:#148567}
+.book.big{margin-left:0;font-size:16px;padding:12px 20px;white-space:nowrap}
+
+.hero{max-width:1240px;margin:0 auto;padding:22px 0 8px}
+.hero h1{margin-bottom:10px}
+.hero p{font-size:17px;max-width:68ch;color:var(--body)}
+.hero .quiet{font-size:14.5px;color:var(--muted);margin-top:6px}
+
+.board{max-width:1240px;margin:14px auto 0;background:#fff;border:1px solid #E4E2D8;border-radius:16px;padding:20px 22px;box-shadow:0 1px 2px rgba(0,0,0,.04)}
+.days{display:flex;gap:6px;flex-wrap:wrap}
+.day-b{border:1px solid #D6D4C9;background:#fff;border-radius:999px;padding:7px 14px;font-weight:700;font-size:14px;color:var(--muted)}
+.day-b.on{background:var(--ink);border-color:var(--ink);color:#fff}
+.news{margin:12px 0 16px;font-size:14.5px;color:var(--body);background:var(--soft);border-radius:8px;padding:10px 12px;line-height:1.55}
+.src-tag{font:700 10.5px var(--mono);text-transform:uppercase;letter-spacing:.06em;background:var(--sky-soft);color:var(--sky-ink);border-radius:4px;padding:2px 6px;margin-right:4px}
+.quiet-tag{background:#EEE;color:var(--muted)}
+
+.tiles{display:grid;grid-template-columns:1.2fr 1fr 1fr 1fr;gap:10px;margin-bottom:16px}
+.tile{border:1px solid var(--line);border-radius:12px;padding:12px 14px;display:flex;flex-direction:column;gap:2px}
+.tile b{font:800 28px/1.1 var(--sans);color:var(--ink);font-variant-numeric:tabular-nums;letter-spacing:-.02em}
+.tile span{font-size:13.5px;color:var(--muted)}
+.tile.lead b{font-size:40px}
+.tile.lead.bad{background:var(--terra-soft);border-color:#EBC3BF}
+.tile.lead.bad b,.tile.lead.bad span{color:var(--terra-ink)}
+.tile.lead.warn{background:var(--mustard-soft);border-color:#EBD98A}
+.tile.lead.warn span{color:var(--mustard-ink)}
+.tile.lead.ok{background:var(--olive-soft);border-color:#C3D39A}
+
+.trips{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.trip-card{border:1px solid var(--line);border-radius:12px;padding:12px 14px}
+.trip-card header{display:flex;flex-direction:column;margin-bottom:8px}
+.trip-card header b{font-size:15.5px}
+.trip-card header span{font-size:12.5px;color:var(--muted)}
+.trip-card ul{list-style:none;padding:0;display:flex;flex-direction:column;gap:4px}
+.g{display:grid;grid-template-columns:20px 74px 1fr;gap:6px;align-items:baseline;font-size:13.5px;padding:5px 8px;border-radius:6px;background:var(--soft)}
+.g b{font-size:13.5px}
+.g .lbl{color:var(--body)}
+.ico{font:700 13px var(--mono);text-align:center}
+.g.ok{background:var(--olive-soft)} .g.ok .ico,.g.ok .lbl{color:var(--olive-ink)}
+.g.bad{background:var(--terra-soft)} .g.bad .ico,.g.bad .lbl{color:var(--terra-ink);font-weight:600}
+.g.warn{background:var(--mustard-soft)} .g.warn .ico,.g.warn .lbl{color:var(--mustard-ink)}
+.g.info .ico{color:var(--sky-ink)}
+.clear-n,.none-affected{font-size:12.5px;color:var(--muted);margin-top:8px}
+.board-foot{margin-top:14px;font-size:13.5px;color:var(--muted)}
+
+.offer{max-width:1240px;margin:16px auto 0;display:flex;align-items:center;justify-content:space-between;gap:24px;background:var(--night);color:var(--night-body);border-radius:16px;padding:22px 26px}
+.offer h2{color:#fff;font:800 22px/1.2 var(--sans);letter-spacing:-.01em;margin-bottom:4px}
+.offer p{font-size:15px;max-width:60ch}
+
+@media (max-width:1000px){.tiles{grid-template-columns:1fr 1fr}.trips{grid-template-columns:1fr}.offer{flex-direction:column;align-items:flex-start}}
+@media (max-width:700px){.topnav{flex-wrap:wrap}.book{margin-left:0}}
