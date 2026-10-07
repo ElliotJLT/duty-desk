@@ -125,3 +125,18 @@ body[data-page="home"]{background:#FBFAF7;padding:0 28px 40px}
 .open li.row.late{background:var(--terra-soft);border-radius:6px;padding:7px 8px}
 .pane{background:#fff}
 .dots.watch{color:#77776F;font-weight:500}
+
+/* Quieter top: headline, one line, then the demo. */
+.intro{padding:48px 0 28px}
+.intro .lede{font-size:18px;margin-bottom:0;max-width:52ch}
+.demo .context{font-size:15px;color:#55554F;margin:6px auto 14px}
+.demo .context b{color:var(--ink)}
+
+/* One type system: sans for everything, the serif only as the headline accent,
+   mono only inside the Slack mock. Labels lose the mono caps. */
+.kicker,.day-title span{font:600 13px/1.3 var(--sans);text-transform:none;letter-spacing:0;color:#66665F}
+.logos{justify-content:space-between}
+.logos div{display:flex;align-items:center;gap:10px}
+.logos img{width:40px;height:40px;border-radius:10px;object-fit:cover}
+.logos b{font:700 16px var(--sans);color:var(--ink);letter-spacing:-.01em}
+.logos div span{font-size:13px;color:#66665F;margin-left:2px}

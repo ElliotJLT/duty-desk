@@ -145,5 +145,5 @@ document.addEventListener('keydown', (e) => {
   if (e.key === 'ArrowLeft') { e.preventDefault(); stop(); go(pos - 1); }
 });
 const start = Number(new URLSearchParams(location.search).get('beat'));
-pos = start ? Math.min(beats.length, start) : 0;
+pos = start ? Math.min(beats.length, start) : 2;
 render();

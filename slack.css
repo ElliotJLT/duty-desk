@@ -196,3 +196,5 @@ h1{font:800 clamp(28px,3.6vw,40px)/1.05 var(--sans);letter-spacing:-.03em;color:
 .chan,.pane{grid-row:1}
 .composer{justify-content:flex-end}
 .m .apptag,.m .role{display:none}
+
+.pane-h span:empty{display:none}
