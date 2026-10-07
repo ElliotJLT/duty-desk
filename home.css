@@ -73,3 +73,55 @@ body[data-page="home"]{background:#FBFAF7;padding:0 28px 40px}
 .board-card .trip-card ul{display:grid;grid-template-columns:1fr 1fr;gap:4px}
 .board-card .g{grid-template-columns:18px 78px 1fr}
 @media (max-width:640px){.board-card .trip-card ul{grid-template-columns:1fr}}
+
+/* About page */
+.about-hero{max-width:1000px;margin:40px auto 28px;display:grid;grid-template-columns:180px 1fr;gap:36px;align-items:center}
+.about-hero img{width:180px;height:180px;border-radius:50%;object-fit:cover;box-shadow:0 10px 30px rgba(30,28,20,.12)}
+.about-hero h1{font:800 clamp(36px,5vw,56px)/1.02 var(--sans);letter-spacing:-.035em;color:var(--ink);margin-bottom:12px}
+.about-hero h1 em{font-family:"Instrument Serif",Georgia,serif;font-weight:400;font-style:italic}
+.about-hero .lede{margin:0;text-align:left}
+.logos{max-width:1000px;margin:0 auto;display:flex;flex-wrap:wrap;justify-content:space-between;gap:14px 28px;padding:22px 0;border-top:1px solid #E7E4DA;border-bottom:1px solid #E7E4DA}
+.logos span{font:800 19px var(--sans);letter-spacing:-.02em;color:#4A4A45}
+.logos small{display:block;font:600 11px var(--mono);letter-spacing:.06em;text-transform:uppercase;color:#5E5E57}
+.creds{max-width:1000px;margin:36px auto 0;display:grid;grid-template-columns:1fr 1fr;gap:36px 48px}
+.creds h2{font:800 22px/1.2 var(--sans);letter-spacing:-.02em;color:var(--ink);margin-bottom:8px}
+.creds p:last-child{font-size:16px;line-height:1.6;color:#4A4A45}
+.travel{max-width:1000px;margin:48px auto;padding:28px 0;border-top:1px solid #E7E4DA}
+.travel h2{font:800 26px/1.2 var(--sans);letter-spacing:-.02em;color:var(--ink);margin-bottom:10px}
+.travel p{font-size:17px;line-height:1.6;color:#4A4A45;max-width:70ch}
+.travel .small{font-size:14px;color:#66665F;margin-top:10px}
+@media (max-width:800px){.about-hero{grid-template-columns:1fr;text-align:left}.creds{grid-template-columns:1fr}}
+
+/* Home v3: the Slack demo is the hero; fewer boxes, more air. */
+.demo{max-width:1240px;margin:0 auto}
+.kicker.center{text-align:center;margin-bottom:14px}
+.demo .nav{justify-content:center;margin-bottom:6px}
+.demo .context{text-align:center;max-width:70ch;margin:8px auto 16px}
+.demo .app{border:1px solid #ECE9DF;box-shadow:0 1px 2px rgba(0,0,0,.03),0 30px 70px rgba(30,28,20,.09)}
+.demo-hint{text-align:center;font-size:14px;color:#66665F;margin-top:14px}
+
+.get{max-width:1100px;margin:96px auto 0}
+.get h2,.me h2{font:800 30px/1.15 var(--sans);letter-spacing:-.025em;color:var(--ink);margin-bottom:22px}
+.get-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:32px}
+.get-grid h3{font:700 17px/1.3 var(--sans);color:var(--ink);margin-bottom:6px}
+.get-grid p,.rules-row p:last-child{font-size:15px;line-height:1.55;color:#55554F}
+.get-note{margin-top:24px;font-size:15px;color:#55554F;max-width:80ch}
+
+.rules-row{max-width:1100px;margin:64px auto 0;display:grid;grid-template-columns:repeat(3,1fr);gap:32px;padding-top:28px;border-top:1px solid #E7E4DA}
+
+.me{max-width:1100px;margin:80px auto 0;display:grid;grid-template-columns:96px 1fr auto;gap:24px;align-items:center;padding:28px 0;border-top:1px solid #E7E4DA;border-bottom:1px solid #E7E4DA}
+.me img{width:96px;height:96px;border-radius:50%;object-fit:cover}
+.me h2{font-size:22px;margin-bottom:4px}
+.me p{font-size:15.5px;color:#4A4A45;max-width:62ch}
+.me p a{color:var(--ink);font-weight:600}
+.foot{max-width:1100px}
+
+@media (max-width:1000px){.get-grid{grid-template-columns:1fr 1fr}.rules-row{grid-template-columns:1fr}.me{grid-template-columns:72px 1fr}.me .cta{grid-column:1/-1;justify-self:start}.me img{width:72px;height:72px}}
+@media (max-width:600px){.get-grid{grid-template-columns:1fr}}
+
+/* Fewer boxes in the list: plain rows, hairlines, colour only where it means something. */
+.open{gap:0}
+.open li.row{border:0;border-bottom:1px solid #EFEDE6;border-radius:0;background:transparent;padding:7px 2px}
+.open li.row.late{background:var(--terra-soft);border-radius:6px;padding:7px 8px}
+.pane{background:#fff}
+.dots.watch{color:#77776F;font-weight:500}
