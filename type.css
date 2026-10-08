@@ -1,0 +1,69 @@
+/* One type system, after incident.io: every heading in one regular-weight serif with
+   tight tracking; everything else in one sans; body copy in soft grey; generous space.
+   Loaded last on every page. */
+:root{
+  --serif:"Newsreader",Georgia,"Times New Roman",serif;
+  --sans:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
+  --mono:var(--sans);
+  --text:rgba(22,22,24,.66);
+}
+body{font-family:var(--sans);font-weight:450;letter-spacing:-.006em}
+h1,h2,h3{font-family:var(--serif)!important;font-weight:400!important;color:#161618!important;text-wrap:balance}
+h1{letter-spacing:-.035em!important;line-height:1.02!important}
+h2{letter-spacing:-.025em!important;line-height:1.12!important}
+h3{letter-spacing:-.015em!important;line-height:1.2!important}
+h1 em,h2 em,.intro h1 em,.about-hero h1 em{font-family:inherit!important;font-style:normal!important;font-weight:inherit!important;display:inline}
+.intro h1 em{display:block}
+
+/* Home */
+.intro{padding:72px 0 24px}
+.intro h1{font-size:clamp(42px,6vw,76px)!important}
+.intro .lede{font-size:19px;line-height:1.5;color:var(--text);font-weight:500}
+.byline{font-size:14.5px;color:var(--text)}
+.jobs{gap:48px;padding-top:56px}
+.jobs h3{font-size:26px!important}
+.jobs p:last-child,.rules3 p,.steps3 span,.faq details p,.trust-foot,.me p,.demo-head p,.creds p:last-child,.travel p,.slide ul,.plain{color:var(--text)!important;font-weight:450}
+.job-when,.kicker,.k,.eyebrow{font:500 13px var(--sans)!important;letter-spacing:0!important;text-transform:none!important;color:rgba(22,22,24,.62)!important}
+.demo-head{margin-top:120px}
+.demo-head h2,.trust h2,.start h2,.faq h2{font-size:clamp(32px,3.6vw,44px)!important}
+.trust,.start,.faq{margin-top:120px}
+.rules3 h3,.steps3 b{font-family:var(--serif);font-weight:400;font-size:22px;letter-spacing:-.015em;color:#161618}
+.rules3 li::before,.steps3 li::before{font-family:var(--sans)}
+.faq summary{font:500 17px var(--sans);letter-spacing:-.01em}
+.me{margin-top:120px}
+.me h2{font-size:26px!important}
+.talk-band h2{font-size:34px!important;color:#fff!important}
+
+/* Demo (Slack mock): one sans, no caps labels */
+.trip-h,.ec-head,.ec-k,.card .src,.block .for,.apptag,.via,.who,.tag{font-family:var(--sans)!important;letter-spacing:0!important;text-transform:none!important}
+.ec-head{font-size:12.5px!important;font-weight:600!important}
+.ec-k{font-size:13px!important;font-weight:600!important}
+.trip-h{font-size:12.5px!important;font-weight:600!important}
+.block .for{font-size:12.5px!important;font-weight:600!important}
+
+/* About */
+.about-hero h1{font-size:clamp(44px,5.4vw,68px)!important}
+.creds{gap:56px 64px;margin-top:64px}
+.creds h2{font-size:28px!important}
+.travel h2{font-size:32px!important}
+
+/* How it works */
+.page h1{font-size:clamp(40px,5vw,60px)!important}
+.slide h2{font-size:clamp(26px,2.8vw,34px)!important}
+.slide{padding:44px 48px}
+
+/* Trust strip, monochrome like incident.io's customer logos */
+.trust-strip{max-width:1000px;margin:56px auto 0;text-align:center}
+.trust-strip .row{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:28px 52px}
+.trust-strip img{height:30px;width:auto;filter:grayscale(1);opacity:.7}
+.trust-strip img.mono{filter:brightness(0);opacity:.55}
+.trust-strip img.tall{height:36px}
+.trust-strip .dfe{font:600 15px/1.1 var(--sans);color:#6B6B70;text-align:left;letter-spacing:-.01em}
+.trust-strip p{margin-top:18px;font-size:14px;color:var(--text)}
+
+/* Same canvas and width on every page */
+body{background:#FBFAF7}
+body:not([data-page="home"]){padding:0 28px 40px}
+.deck,.page{max-width:1100px!important;margin-left:auto!important;margin-right:auto!important}
+.page{padding-top:56px!important}
+.sources{max-width:1100px;margin:0 auto}
