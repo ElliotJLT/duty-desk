@@ -21,11 +21,10 @@ export const scenario = {
     name: 'Fernway Travel',
     team: {
       hannah: { name: 'Hannah', role: 'Head of operations' },
-      sam: { name: 'Sam', role: 'Operations' },
-      nadia: { name: 'Nadia', role: 'Guest care' },
+      nadia: { name: 'Nadia', role: 'Operations' },
     },
     authority: {
-      itinerary: 'hannah', guestMessage: 'hannah', transfer: 'sam',
+      itinerary: 'hannah', guestMessage: 'hannah', transfer: 'nadia',
     },
   },
   trips: [
@@ -92,9 +91,9 @@ export const scenario = {
       effects: [{ type: 'flight', status: 'cancelled', flight: 'SA 811', guests: ['Aisha B.', 'Tom R.', 'Jen W.', 'Marcus O.'], newArrival: 'SA 815, Fri 12:10 Nice', from: 'each guest' }],
     },
     {
-      id: 'e4', t: '2024-04-23T11:00:00+01:00', kind: 'decision', by: 'sam',
+      id: 'e4', t: '2024-04-23T11:00:00+01:00', kind: 'decision', by: 'nadia',
       text: 'Sent the transfer change to Azur Ground for the four on SA 815.',
-      effects: [{ type: 'decide', id: 'transfer-RIV-1', by: 'sam' }],
+      effects: [{ type: 'decide', id: 'transfer-RIV-1', by: 'nadia' }],
     },
     {
       id: 'e5', t: '2024-04-23T14:20:00+01:00', kind: 'private', from: 'Azur Ground (WhatsApp)', channel: 'whatsapp',
@@ -143,9 +142,9 @@ export const scenario = {
       effects: [{ type: 'decide', id: 'joinup-AND', by: 'hannah' }, { type: 'approve-drafts', trip: 'AND' }, { type: 'approve-drafts', trip: 'RIV' }],
     },
     {
-      id: 'e13', t: '2024-04-24T20:05:00+01:00', kind: 'decision', by: 'sam',
+      id: 'e13', t: '2024-04-24T20:05:00+01:00', kind: 'decision', by: 'nadia',
       text: 'Sent the transfer changes to Sur Travel (the five on SA 376) and Azur Ground (Clare and Raj).',
-      effects: [{ type: 'decide', id: 'transfer-AND-1', by: 'sam' }, { type: 'decide', id: 'transfer-RIV-2', by: 'sam' }],
+      effects: [{ type: 'decide', id: 'transfer-AND-1', by: 'nadia' }, { type: 'decide', id: 'transfer-RIV-2', by: 'nadia' }],
     },
     {
       id: 'e14', t: '2024-04-24T21:15:00+01:00', kind: 'private', from: 'Sur Travel (WhatsApp)', channel: 'whatsapp',
@@ -200,9 +199,9 @@ export const scenario = {
       effects: [{ type: 'flight', status: 'cancelled', flight: 'BW 402', guests: ['Ruth K.'], newArrival: 'BW 406, Sat 11:00 Málaga', from: 'Ruth herself' }],
     },
     {
-      id: 'e23', t: '2024-04-26T15:50:00+01:00', kind: 'decision', by: 'sam',
+      id: 'e23', t: '2024-04-26T15:50:00+01:00', kind: 'decision', by: 'nadia',
       text: "Sent Ruth's new arrival to Sur Travel.",
-      effects: [{ type: 'decide', id: 'transfer-AND-2', by: 'sam' }],
+      effects: [{ type: 'decide', id: 'transfer-AND-2', by: 'nadia' }],
     },
     {
       id: 'e24', t: '2024-04-26T15:55:00+01:00', kind: 'decision', by: 'hannah',

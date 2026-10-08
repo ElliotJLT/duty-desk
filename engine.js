@@ -12,7 +12,7 @@ export const RULES = {
   manifest: { name: 'Start from the trip list', text: 'Who is affected comes from the flights guests gave us, not from the headline. Flights over France count too.' },
   allclear: { name: 'Good news closes nothing', text: 'News that the cause has gone away doesn\'t close anything for a guest. Each one is confirmed on its own.' },
   evidence: { name: 'Only the right person confirms', text: 'The guest confirms their new arrival, the DMC confirms the transfer by name, the trip leader confirms the guest is with the group.' },
-  routing: { name: 'The right person decides', text: 'The desk proposes. Sam signs off transfer changes; Hannah signs off itinerary changes and every message to guests.' },
+  routing: { name: 'The right person decides', text: 'The desk proposes. Nadia signs off transfer changes; Hannah signs off itinerary changes and every message to guests.' },
   comms: { name: 'Say only what\'s known', text: 'Messages to guests are drafted only on a stated basis, and never promise what hasn\'t been confirmed.' },
   clock: { name: 'Everything has an owner and a deadline', text: 'Missed deadlines go to Hannah. They are never quietly extended.' },
   conflict: { name: 'Keep disagreements visible', text: 'When sources disagree, both are kept with their times. Nothing is averaged.' },
@@ -167,7 +167,7 @@ export function buildRoom(scenario, step) {
         });
         say(e, 'evidence', `${f.flight} cancelled for ${gs.length} ${t.trip} guests. New arrival from ${f.from}: ${f.newArrival}.`);
         const n = room.decisions.filter((d) => d.id.startsWith(`transfer-${t.id}-`)).length + 1;
-        propose(e, { id: `transfer-${t.id}-${n}`, owner: 'sam', trip: t.id, what: `${t.dmc.name} to move the pickup to ${f.newArrival} and tell the hotel (${gs.map((g) => g.name).join(', ')})`, basis: `new arrival from ${f.from}` });
+        propose(e, { id: `transfer-${t.id}-${n}`, owner: 'nadia', trip: t.id, what: `${t.dmc.name} to move the pickup to ${f.newArrival} and tell the hotel (${gs.map((g) => g.name).join(', ')})`, basis: `new arrival from ${f.from}` });
         if (!room.decisions.find((d) => d.id === `joinup-${t.id}`)) {
           propose(e, { id: `joinup-${t.id}`, owner: 'hannah', trip: t.id, what: `where the late ${t.trip} guests join the group`, basis: `new arrivals on ${f.newArrival.split(',')[1].trim()}` });
         } else {

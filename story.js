@@ -102,6 +102,18 @@ export const moments = [
 
 export const people = {
   hannah: { name: 'Hannah', role: 'Head of operations', colour: '#C9524A' },
-  sam: { name: 'Sam', role: 'Operations', colour: '#3E6675' },
-  nadia: { name: 'Nadia', role: 'Guest care', colour: '#5E7F1F' },
+  nadia: { name: 'Nadia', role: 'Operations', colour: '#5E7F1F' },
+};
+
+// Who each outside voice is, shown beside their name so a reader can tell
+// a local partner from a trip leader from a guest.
+export const cast = {
+  'Azur Ground': 'Local partner, Nice',
+  'Sur Travel': 'Local partner, Málaga',
+  Luc: 'Trip leader, Riviera',
+  Pilar: 'Trip leader, Andalusia',
+  'Emma L.': 'Guest, Riviera',
+  'Clare F.': 'Guest, Riviera',
+  'Dev M.': 'Guest, Andalusia',
+  'Ruth K.': 'Guest, Andalusia',
 };

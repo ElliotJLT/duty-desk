@@ -1,6 +1,6 @@
 import { scenario } from './scenario.js';
 import { buildRoom, fmt } from './engine.js';
-import { moments, people } from './story.js';
+import { moments, people, cast } from './story.js';
 import { fill } from './story-fill.js';
 
 const $ = (id) => document.getElementById(id);
@@ -17,13 +17,13 @@ let timer = null;
 
 const rich = (text) => esc(text)
   .replace(/\*\*(.+?)\*\*/g, '<b>$1</b>')
-  .replace(/@(Hannah|Sam|Nadia)/g, '<span class="at">@$1</span>');
+  .replace(/@(Hannah|Nadia)/g, '<span class="at">@$1</span>');
 
 function head(msg) {
   const time = `<time>${esc(msg.time.replace(/^[A-Z][a-z]{2} /, ''))}</time>`;
   if (msg.kind === 'news') return ['<i class="av sq news-sq" aria-hidden="true"></i>', `<b>News feed</b><span class="apptag">APP</span>${time}`];
   if (msg.kind === 'desk') return ['<i class="av sq desk-sq" aria-hidden="true"></i>', `<b>Duty desk</b><span class="apptag">APP</span>${time}`];
-  if (msg.kind === 'external') return [`<i class="av wa" aria-hidden="true">${esc(msg.from[0])}</i>`, `<b>${esc(msg.from)}</b><span class="via">via ${esc(msg.via)}</span>${time}`];
+  if (msg.kind === 'external') return [`<i class="av wa" aria-hidden="true">${esc(msg.from[0])}</i>`, `<b>${esc(msg.from)}</b><span class="role">${esc(cast[msg.from])}</span><span class="via">via ${esc(msg.via)}</span>${time}`];
   const p = people[msg.who];
   return [`<i class="av" style="background:${p.colour}" aria-hidden="true">${p.name[0]}</i>`, `<b>${p.name}</b><span class="role">${p.role}</span>${time}`];
 }
@@ -49,7 +49,7 @@ function body(msg, own, now) {
       const d = now.decisions.find((x) => x.id === a.decision);
       const owner = team[d.owner].name;
       const done = d.status === 'done';
-      return `<div class="block"><span class="for">For ${owner}</span><p>${esc(a.ask)}</p>${done
+      return `<div class="block"><span class="for">${owner} to ${a.label.startsWith('Send') ? 'send' : 'approve'}</span><p>${esc(a.ask)}</p>${done
         ? `<div class="acted">✓ ${owner} ${a.label.startsWith('Send') ? 'sent it' : 'approved'} · ${hhmm(d.at)}</div>`
         : `<div class="actions"><button class="act" data-next>${esc(a.label)}</button><button class="act ghost" disabled>Not now</button></div>`}</div>`;
     }).join('');
@@ -76,7 +76,7 @@ function pane(room) {
   const waiting = room.decisions.filter((d) => d.status === 'waiting').length + room.drafts.filter((d) => d.status === 'waiting').length;
   const out = groups
     + (tasks.length ? `<div class="trip"><p class="trip-h">To do</p><ul class="open">${tasks.map((x) => `<li class="${x.escalated ? 'late' : ''}"><b>${esc(x.title)}</b><span class="meta">${esc(team[x.owner].name)}</span></li>`).join('')}</ul></div>` : '')
-    + (waiting ? `<p class="waiting">${waiting} waiting for Sam or Hannah to approve</p>` : '');
+    + (waiting ? `<p class="waiting">${waiting} waiting for Nadia or Hannah</p>` : '');
   return out || '<p class="none">Nothing open.</p>';
 }
 
@@ -99,7 +99,7 @@ function render() {
     const day = fmt(eventOf(msg.at).t).replace(/ \d\d:\d\d$/, '');
     if (day !== lastDay) { html.push(`<li class="day"><span>${esc(day)}</span></li>`); lastDay = day; }
     const [av, h] = head(msg);
-    html.push(`<li class="m${msg.thread ? ' thread' : ''}${msg.kind === 'external' ? ' ext' : ''}${i === msgs.length - 1 ? ' new' : ''}">${av}<div class="mb"><div class="mh">${h}</div>${body(msg, own(msg.at), now)}</div></li>`);
+    html.push(`<li class="m${msg.kind === 'external' ? ' ext' : ''}${i === msgs.length - 1 ? ' new' : ''}">${av}<div class="mb"><div class="mh">${h}</div>${body(msg, own(msg.at), now)}</div></li>`);
     const mom = moments.find((x) => x.messages[x.messages.length - 1] === msg);
     const mi = moments.indexOf(mom);
     if (mom && shown.some((b) => b.end && b.mi === mi)) {
