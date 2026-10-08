@@ -24,7 +24,7 @@
 
 <header class="page">
   <h1>How it works</h1>
-  <p class="sub">Five short panels. What the job is, what the desk does, who it talks to, the rules it keeps, and why it gets better every time a trip goes sideways.</p>
+  <p class="sub">Six short panels. What the job is, what the desk does, who it talks to, the rules it keeps, and why it gets better every time a trip goes sideways.</p>
 </header>
 
 <main class="deck">
@@ -60,7 +60,7 @@
       <div><b>Notices</b><span>Reads the news against the trip list and finds who's actually on an affected flight.</span></div>
       <div><b>Asks</b><span>Gets new arrival times from guests, and confirmations from local partners.</span></div>
       <div><b>Proposes</b><span>Drafts the pickup change, the join-up plan and the guest message, for a person to approve.</span></div>
-      <div><b>Chases</b><span>Every open item has an owner and a deadline. Missed deadlines go to the duty director.</span></div>
+      <div><b>Chases</b><span>Every open item has an owner and a deadline. Missed deadlines go to your head of operations.</span></div>
       <div><b>Closes</b><span>Only when the right person has confirmed each guest. Not when the news moves on.</span></div>
     </div>
   </section>
@@ -77,7 +77,7 @@
       <p class="callout">This is the part we most want to get right with real local partners, so it fits how they already work rather than adding to it.</p>
     </div>
     <div class="visual room" aria-hidden="true">
-      <div class="in"><span>In Slack</span><b>Duty director</b><b>Operations</b><b>Guest care</b></div>
+      <div class="in"><span>In Slack</span><b>Head of operations</b><b>Operations</b><b>Guest care</b></div>
       <div class="hub"><i class="sq desk-sq"></i><b>Duty desk</b></div>
       <div class="out"><span>WhatsApp and email</span><b>Guests</b><b>Local partners</b><b>Trip leaders</b><b>Hotels</b></div>
     </div>
@@ -114,6 +114,26 @@
     </div>
     <div class="visual loop" aria-hidden="true">
       <div>Disruption</div><div>Room</div><div>Record</div><div>Review</div><div>Playbook</div>
+    </div>
+  </section>
+
+  <section class="slide">
+    <div class="copy">
+      <span class="k">6 · Under the hood</span>
+      <h2>Where the AI does the work, and where it doesn't.</h2>
+      <ul>
+        <li><b>AI reads.</b> Guests, partners and leaders write however they like: "landing Tues morning on the easyJet", "all sorted 👍". A language model turns each message into who, what and when, and shows what it read.</li>
+        <li><b>AI drafts.</b> Updates for guests, requests for local partners, and the summary for whoever's on call.</li>
+        <li><b>Rules decide.</b> Who's still open, who confirmed what, and when something escalates are fixed rules, so the same message always gets the same answer and can be checked.</li>
+        <li><b>People approve.</b> Anything a guest sees, and any change to a trip, until you choose to let routine messages go on their own.</li>
+      </ul>
+      <p class="callout">The rules have 23 automated checks against this replay. How accurately it reads messages will be measured on each operator's own messages during a trial, before anything goes out unapproved.</p>
+    </div>
+    <div class="visual verbs">
+      <div><b>Message in</b><span>"Our flight's cancelled. Raj and I are on BW 322 Friday, landing Nice 11:20."</span></div>
+      <div><b>What it read</b><span>Clare F. and Raj P. · BW 322 · lands Nice, Fri 11:20</span></div>
+      <div><b>What changed</b><span>Two guests now arrive Friday. Pickup needs moving with Azur Ground.</span></div>
+      <div><b>What it proposed</b><span>Pickup request to the local partner (Sam to send) and a guest update (Hannah to approve).</span></div>
     </div>
   </section>
 

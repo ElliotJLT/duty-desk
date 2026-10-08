@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Duty desk · Great trips are made by people</title>
+<title>Duty desk · Know where every guest is</title>
 <meta name="description" content="A real French air traffic control strike, played through a tour operator's incident channel. The strike was called off. The flights were cancelled anyway.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -22,8 +22,9 @@
 </nav>
 
 <header class="intro">
-  <h1>Great trips are made by people. <em>We take care of the chasing.</em></h1>
-  <p class="lede">An AI assistant for small-group tour operators. It keeps track of the messages between your guests, local partners and trip leaders, so everyone has more time for the trip itself. People make every decision.</p>
+  <h1>When a trip changes, <em>know where every guest is.</em></h1>
+  <p class="lede">An AI assistant for small-group tour operators. It reads the messages from your guests, local partners and trip leaders, keeps one list of who still needs sorting, and drafts the updates for your team to approve.</p>
+  <p class="byline"><img src="elliot.jpg" alt="" width="28" height="28">Built by Elliot Little, who ran operations and safety at Flash Pack. <a href="#start">Free for your next few departures while it's early.</a></p>
 </header>
 
 <section class="jobs" aria-label="What the desk does">
@@ -63,7 +64,7 @@
     <ul>
       <li># general</li>
       <li class="unread"># ops-daily<em>3</em></li>
-      <li class="on"># inc-french-atc-strike</li>
+      <li class="on"># french-strike-april</li>
       <li># trip-riviera-apr</li>
       <li># trip-andalusia-apr</li>
     </ul>
@@ -83,12 +84,12 @@
 
   <main class="chan">
     <div class="chan-head">
-      <div><b># inc-french-atc-strike</b><span class="topic" id="topic"></span></div>
+      <div><b># french-strike-april</b><span class="topic" id="topic"></span></div>
       <div class="members" aria-hidden="true"><i style="background:#C9524A">H</i><i style="background:#3E6675">S</i><i style="background:#5E7F1F">N</i><i class="d">D</i><span>+ 2 DMCs, 3 leaders via WhatsApp</span></div>
     </div>
     <ol class="msgs" id="msgs" aria-label="Messages" tabindex="0"></ol>
     <div class="composer">
-      <span class="fake-input">Message #inc-french-atc-strike</span>
+      <span class="fake-input">Message #french-strike-april</span>
       <div class="ctl">
         <button id="back" class="b" aria-label="Previous message">←</button>
         <button id="play" class="b">Play</button>
@@ -113,25 +114,25 @@
   <p class="trust-lede">Your team and local partners make the trip. The desk keeps track, and people make every decision.</p>
   <ol class="rules3">
     <li>
-      <h3>It never acts on its own.</h3>
-      <p>Every message to a guest or partner, and every change to a trip, waits for a named person on your team to approve it.</p>
-      <p class="proof">In the demo: Hannah approves the 14:00 start before anything moves.</p>
+      <h3>Nothing reaches a guest without your say-so.</h3>
+      <p>Every guest message and every change to a trip waits for a named person on your team. As it proves itself on routine messages, you can let it send those on its own, one type at a time. You choose, and you can switch it back.</p>
+      <p class="proof">In the demo: Hannah approves the trip leader's 14:00 start before anything moves.</p>
     </li>
     <li>
       <h3>It only marks a guest as sorted when someone who knows says so.</h3>
       <p>That's the guest, your local partner naming them, or the trip leader who's with them.</p>
-      <p class="proof">In the demo: when a local partner replies "all sorted", it thanks them and asks which guests that covers.</p>
+      <p class="proof">In the demo: when a local partner replies "all sorted", it thanks them and asks which guests that covers. And when a guest's flight changes, any draft that no longer fits is withdrawn before anyone can send it.</p>
     </li>
     <li>
-      <h3>Nobody slips through.</h3>
-      <p>Every guest has an owner and a deadline. Missed deadlines go to the duty director, and the incident can't close while anyone is unaccounted for.</p>
-      <p class="proof">In the demo: Ruth goes to Hannah at midday Thursday, and the list stays open on Friday until she's reached.</p>
+      <h3>A quiet guest gets followed up, not forgotten.</h3>
+      <p>Every guest has someone looking after them and a time to check back. If that passes, it goes to your head of operations with suggested next steps, and the list stays open until the guest is with their group.</p>
+      <p class="proof">In the demo: Ruth goes quiet. At midday Thursday it brings Hannah her emergency contact, the local partner and the insurer's line. She turns up on Friday, safe, and stays on the list until she's with her group.</p>
     </li>
   </ol>
   <p class="trust-foot">Everything is written down as it happens: who knew what, when, and who decided. That's the record your safety lead, insurer or board will ask for.</p>
 </section>
 
-<section class="start">
+<section class="start" id="start">
   <h2>How it starts</h2>
   <ol class="steps3">
     <li><b>Send your last messy disruption.</b><span>I'll replay it like the week above, so you can see what the desk would have kept open.</span></li>
@@ -147,7 +148,10 @@
   <details><summary>Where does it live? Do our partners and guests need anything new?</summary><p>Your team sees it in Slack or Teams, or by email if you use neither. Local partners, trip leaders and guests carry on with WhatsApp and email, and nobody outside your team installs anything.</p></details>
   <details><summary>Do we have to change our booking system?</summary><p>No. It works from whatever holds your guests' flights: your booking system, your pre-trip form or a spreadsheet. It replaces nothing.</p></details>
   <details><summary>We already use a booking system and send flight alerts. How is this different?</summary><p>Those hold the bookings and tell the guest. The desk does the work in between: chasing the replies, getting changes to your local partners and trip leaders, and keeping going until each guest is sorted.</p></details>
-  <details><summary>What guest data would you need?</summary><p>For a first trial, first names, flights and trip dates. We agree in writing how long it's kept before anything is shared.</p></details>
+  <details><summary>What guest data would you need, and where does it go?</summary><p>For a first trial: guests' first names, flights, trip dates and the emergency contact you already hold. Before anything is shared we agree in writing which AI provider is used, where the data is stored and how long it's kept.</p></details>
+  <details><summary>Who's responsible if it gets something wrong?</summary><p>Your team, as now: people make every decision and approve every guest message. The desk drafts and keeps track, and logs everything, so any mistake can be traced and put right.</p></details>
+  <details><summary>What happens at 3am, or if it goes down?</summary><p>Your duty phone and your current process stay exactly as they are. The desk sits alongside them and never replaces them. During a trial I'm on call with your team.</p></details>
+  <details><summary>Won't approving everything just make more work?</summary><p>Approvals are grouped and short. In the strike week above, 31 guests across three trips needed about ten approvals in total. As routine messages prove themselves, you can let those go out on their own.</p></details>
   <details><summary>Can I buy it today?</summary><p>Not yet. It's early, and the first operators get it run with them by hand while it's built. That's the point: it gets built around how you actually work.</p></details>
 </section>
 

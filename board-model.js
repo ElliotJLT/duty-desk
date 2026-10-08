@@ -26,10 +26,10 @@ export const DAYS = [
     without: 'Ruth is one quiet name among dozens of messages.',
   },
   {
-    label: 'Fri 26', at: 'e21', news: [], quiet: 'The strike day is over. No carry-over into Friday in the sources.',
+    label: 'Fri 26', at: 'e25', news: [], quiet: 'The strike day is over. No carry-over into Friday in the sources.',
     title: 'Can we close it?',
-    desk: '{withGroup} of {affected} guests on affected flights are with their group, each confirmed by their trip leader in person. Ruth is still unaccounted for, so the desk won\'t let the incident close.',
-    without: 'Everyone "rebooked", transfers "all sorted", incident closed. Nobody notices Ruth\'s empty seat.',
+    desk: '{withGroup} of {affected} guests on changed flights are with their group, each confirmed by their trip leader in person. Ruth got in touch at 15:40: she\'s safe and lands on Saturday, so she stays on the list until Pilar has her.',
+    without: 'By Friday the news has moved on and everyone\'s tired. One quiet guest is easy to lose among dozens of messages.',
   },
 ];
 

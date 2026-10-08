@@ -20,7 +20,7 @@ export const scenario = {
   operator: {
     name: 'Fernway Travel',
     team: {
-      hannah: { name: 'Hannah', role: 'Duty Director' },
+      hannah: { name: 'Hannah', role: 'Head of operations' },
       sam: { name: 'Sam', role: 'Operations' },
       nadia: { name: 'Nadia', role: 'Guest care' },
     },
@@ -103,7 +103,7 @@ export const scenario = {
     },
     {
       id: 'e6', t: '2024-04-23T17:30:00+01:00', kind: 'decision', by: 'hannah',
-      text: 'Approved: Friday\'s walk starts at 14:00 instead of 10:00 so the four can join. Luc to tell the group. Send the four their message.',
+      text: 'Approved Luc\'s plan: Friday\'s walk starts at 14:00 instead of 10:00 so the four can join. Send the four their message.',
       effects: [{ type: 'decide', id: 'joinup-RIV', by: 'hannah' }, { type: 'approve-drafts', trip: 'RIV' }],
     },
     {
@@ -170,6 +170,11 @@ export const scenario = {
       effects: [{ type: 'claim', subject: 'the cut at Charles de Gaulle', value: '55%', relevant: false }],
     },
     {
+      id: 'e18b', t: '2024-04-25T12:20:00+01:00', kind: 'decision', by: 'hannah',
+      text: "Agreed. Nadia, call Ruth's emergency contact now. Sur Travel to look out for her at Málaga arrivals. If we still have nothing by 18:00, I'll call the insurer's assistance line.",
+      effects: [],
+    },
+    {
       id: 'e18', t: '2024-04-25T15:00:00+01:00', kind: 'private', from: 'Azur Ground (email)', channel: 'email',
       text: 'Confirmed: Clare F and Raj P, Fri 11:40 pickup Nice, Hotel Bellevue informed.',
       effects: [{ type: 'dmc-confirm', dmc: 'azur', guests: ['Clare F.', 'Raj P.'], what: 'Fri 11:40 pickup; hotel informed' }],
@@ -188,6 +193,26 @@ export const scenario = {
       id: 'e21', t: '2024-04-26T15:05:00+01:00', kind: 'private', from: 'Pilar (WhatsApp)', channel: 'whatsapp',
       text: 'Dev, Ian, Nora, Paul and Amy are with us in Ronda. Hugh, Lina, Zoe, Carl and Esme too. Still nothing from Ruth, her seat on the transfer was empty.',
       effects: [{ type: 'joined', trip: 'AND', by: 'pilar', guests: ['Dev M.', 'Ian G.', 'Nora Y.', 'Paul Z.', 'Amy C.', 'Hugh S.', 'Lina F.', 'Zoe B.', 'Carl W.', 'Esme D.'] }],
+    },
+    {
+      id: 'e22', t: '2024-04-26T15:40:00+01:00', kind: 'private', from: 'Ruth K. (WhatsApp)', channel: 'whatsapp',
+      text: "So sorry everyone, my phone died and I've been stuck at Heathrow. My flight was cancelled. I'm on BW 406 tomorrow, landing Málaga 11:00 Saturday.",
+      effects: [{ type: 'flight', status: 'cancelled', flight: 'BW 402', guests: ['Ruth K.'], newArrival: 'BW 406, Sat 11:00 Málaga', from: 'Ruth herself' }],
+    },
+    {
+      id: 'e23', t: '2024-04-26T15:50:00+01:00', kind: 'decision', by: 'sam',
+      text: "Sent Ruth's new arrival to Sur Travel.",
+      effects: [{ type: 'decide', id: 'transfer-AND-2', by: 'sam' }],
+    },
+    {
+      id: 'e24', t: '2024-04-26T15:55:00+01:00', kind: 'decision', by: 'hannah',
+      text: 'Approved the message to Ruth.',
+      effects: [{ type: 'approve-drafts', trip: 'AND' }],
+    },
+    {
+      id: 'e25', t: '2024-04-26T16:30:00+01:00', kind: 'private', from: 'Sur Travel (WhatsApp)', channel: 'whatsapp',
+      text: 'Ruth K pickup booked Sat 11:30 Málaga, straight to the group.',
+      effects: [{ type: 'dmc-confirm', dmc: 'sur', guests: ['Ruth K.'], what: 'Sat 11:30 pickup to the group' }],
     },
   ],
 };

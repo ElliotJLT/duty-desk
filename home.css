@@ -188,3 +188,6 @@ body[data-page="home"]{background:#FBFAF7;padding:0 28px 40px}
 .intro h1 em{display:block}
 .ec-k.hard{color:#5E5E57}
 .ec-row{grid-template-columns:130px 1fr}
+.byline{display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap;margin-top:18px;font-size:15px;color:#4A4A45}
+.byline img{width:28px;height:28px;border-radius:50%;object-fit:cover}
+.byline a{color:var(--ink);font-weight:600}

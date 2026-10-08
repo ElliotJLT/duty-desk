@@ -153,6 +153,17 @@ export function buildRoom(scenario, step) {
           g.cancelled = true;
           g.newArrival = f.newArrival;
           g.steps.arrival = { by: 'guest', text: f.newArrival, t: e.t };
+          if (g.escalated) {
+            g.escalated = false;
+            say(e, 'evidence', `${g.name} is in touch again. Off the overdue list; still followed until they're with the group.`);
+          }
+          const reach = room.tasks.find((x) => x.guest === g.name && !x.done);
+          if (reach) { reach.done = true; reach.doneAt = e.t; }
+          room.drafts.filter((d) => d.status === 'waiting' && d.to.split(', ').includes(g.name)).forEach((d) => {
+            d.status = 'replaced';
+            d.replacedAt = e.t;
+            say(e, 'comms', `Withdrew the earlier draft to ${d.to}: it no longer matches what we know.`);
+          });
         });
         say(e, 'evidence', `${f.flight} cancelled for ${gs.length} ${t.trip} guests. New arrival from ${f.from}: ${f.newArrival}.`);
         const n = room.decisions.filter((d) => d.id.startsWith(`transfer-${t.id}-`)).length + 1;

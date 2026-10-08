@@ -40,7 +40,8 @@ function body(msg, own, now) {
   }
   if (msg.draft) {
     const d = now.drafts.find((x) => x.id === msg.draft);
-    const state = d.status === 'approved' ? `Approved by Hannah · ${hhmm(d.approvedAt)}` : 'Waiting for Hannah';
+    const state = d.status === 'approved' ? `Approved by Hannah · ${hhmm(d.approvedAt)}`
+      : d.status === 'replaced' ? `Withdrawn at ${hhmm(d.replacedAt)}: his flight was cancelled, so a new update replaced it` : 'Waiting for Hannah';
     html += `<div class="card draft"><span class="src">Draft to ${esc(d.to)} · ${state}</span><p>${esc(d.text)}</p><span class="basis">Why: ${esc(d.basis)}.</span></div>`;
   }
   if (msg.actions) {
