@@ -41,7 +41,7 @@ function body(msg, own, now) {
   if (msg.draft) {
     const d = now.drafts.find((x) => x.id === msg.draft);
     const state = d.status === 'approved' ? `Approved by Hannah · ${hhmm(d.approvedAt)}` : 'Waiting for Hannah';
-    html += `<div class="card draft"><span class="src">Draft to ${esc(d.to)} · ${state}</span><p>${esc(d.text)}</p><span class="basis">Why not a yes: ${esc(d.basis)}.</span></div>`;
+    html += `<div class="card draft"><span class="src">Draft to ${esc(d.to)} · ${state}</span><p>${esc(d.text)}</p><span class="basis">Why: ${esc(d.basis)}.</span></div>`;
   }
   if (msg.actions) {
     html += msg.actions.map((a) => {
@@ -66,7 +66,7 @@ function pane(room) {
         : g.cancelled ? g.newArrival.split(', ')[1]
           : `${g.travel.flight} Thu`;
       return `<li class="row${g.escalated ? ' late' : ''}"><b>${esc(g.name)}</b><span class="meta">${esc(status)}</span>${g.escalated && !g.cancelled ? '<span class="dots late-tag">overdue</span>' : g.cancelled
-        ? `<span class="dots" aria-label="New flight, transfer, with group">${dot(g.steps.arrival, 'New flight')}${dot(g.steps.transfer, 'Transfer')}${dot(g.steps.joined, 'With group')}</span>`
+        ? `<span class="dots" aria-label="New flight, pickup, with group">${dot(g.steps.arrival, 'New flight')}${dot(g.steps.transfer, 'Pickup')}${dot(g.steps.joined, 'With group')}</span>`
         : '<span class="dots watch">watching</span>'}</li>`;
     }).join('');
     return `<div class="trip"><p class="trip-h">${esc(t.trip)}</p><ul class="open">${rows}</ul></div>`;
@@ -75,7 +75,7 @@ function pane(room) {
   const waiting = room.decisions.filter((d) => d.status === 'waiting').length + room.drafts.filter((d) => d.status === 'waiting').length;
   const out = groups
     + (tasks.length ? `<div class="trip"><p class="trip-h">To do</p><ul class="open">${tasks.map((x) => `<li class="${x.escalated ? 'late' : ''}"><b>${esc(x.title)}</b><span class="meta">${esc(team[x.owner].name)}</span></li>`).join('')}</ul></div>` : '')
-    + (waiting ? `<p class="waiting">${waiting} waiting for Sam or Hannah to sign off</p>` : '');
+    + (waiting ? `<p class="waiting">${waiting} waiting for Sam or Hannah to approve</p>` : '');
   return out || '<p class="none">Nothing open.</p>';
 }
 
@@ -103,8 +103,8 @@ function render() {
     const mi = moments.indexOf(mom);
     if (mom && shown.some((b) => b.end && b.mi === mi)) {
       html.push(`<li class="endcard${mi === current ? ' new' : ''}"><div class="ec-head">End of ${esc(mom.label)}</div>
-        <div class="ec-row"><span class="ec-k ok">The desk</span><p>${esc(mom.takeaway)}</p></div>
-        <div class="ec-row"><span class="ec-k bad">Without it</span><p>${esc(mom.without)}</p></div></li>`);
+        <div class="ec-row"><span class="ec-k ok">What the desk did</span><p>${esc(mom.takeaway)}</p></div>
+        <div class="ec-row"><span class="ec-k hard">Why it's hard</span><p>${esc(mom.without)}</p></div></li>`);
     }
   });
   $('msgs').innerHTML = html.join('') || '<li class="empty">Press <b>Start</b>. Messages arrive in the order they did that week.</li>';

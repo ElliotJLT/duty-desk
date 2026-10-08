@@ -186,3 +186,5 @@ body[data-page="home"]{background:#FBFAF7;padding:0 28px 40px}
 .intro h1{max-width:20ch;font-size:clamp(36px,5.2vw,62px)}
 .intro h1{max-width:none}
 .intro h1 em{display:block}
+.ec-k.hard{color:#5E5E57}
+.ec-row{grid-template-columns:130px 1fr}

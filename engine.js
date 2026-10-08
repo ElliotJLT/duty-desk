@@ -189,7 +189,7 @@ export function buildRoom(scenario, step) {
         const g = byName(f.guest);
         draft(e, {
           trip: g.trip, to: f.guest, id: 'reply-dev',
-          basis: `no word yet on ${g.travel.flight}; the flight cuts aren't reported reversed`,
+          basis: `no news yet on ${g.travel.flight}, and the airlines haven't restored Thursday's flights`,
           text: 'The strike itself has been called off, but the airlines had already been told to cut Thursday\'s flights. Please check your booking with Solent Air, and let us know either way. We\'ll keep your pickup and the group posted.',
         });
         say(e, 'allclear', `Didn't tell ${f.guest} "you're all good". The strike being called off isn't a basis for that.`);

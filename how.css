@@ -43,3 +43,4 @@
 
 .sources{padding:10px 4px 40px;font-size:13px;color:var(--muted);display:flex;flex-direction:column;gap:6px}
 @media (max-width:900px){.slide{grid-template-columns:1fr;padding:24px}.room{grid-template-columns:1fr}}
+.rules span{color:#4A4A45}

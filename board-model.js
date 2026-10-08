@@ -16,7 +16,7 @@ export const DAYS = [
   {
     label: 'Wed 24', at: 'e14', news: ['e7', 'e9'],
     title: 'The strike is called off. The flights are still cancelled.',
-    desk: 'Closed nothing. Dev asked "are we all good?" and got an honest holding reply, not a yes. That evening {newCancelled} more guests\' flights were cancelled. The Málaga agent replied "all sorted 👍", which names nobody, so the desk ticked nobody off and asked for names.',
+    desk: 'Closed nothing. Dev asked "are we all good?" and got an honest holding reply, not a yes. That evening {newCancelled} more guests\' flights were cancelled. The Málaga partner replied "all sorted 👍", so the desk thanked them and asked which guests that covers.',
     without: '"Strike\'s off, you\'re all good." Dev hears it at lunchtime. "All sorted" gets ticked off.',
   },
   {
