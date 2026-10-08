@@ -153,3 +153,21 @@ body[data-page="home"]{background:#FBFAF7;padding:0 28px 40px}
 .rules3 .proof{margin-top:10px;font-size:14px;color:var(--olive-ink)}
 .trust-foot{margin-top:36px;font-size:15.5px;color:#55554F;max-width:78ch}
 @media (max-width:900px){.rules3{grid-template-columns:1fr;gap:28px}}
+
+/* How it starts (Gojiberry's three steps) and an FAQ (Trellis, Lightsprint). */
+.start,.faq{max-width:1100px;margin:88px auto 0}
+.start h2,.faq h2{font:800 30px/1.15 var(--sans);letter-spacing:-.025em;color:var(--ink);margin-bottom:22px}
+.steps3{list-style:none;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:20px;counter-reset:s}
+.steps3 li{counter-increment:s;background:#fff;border:1px solid #ECE9DF;border-radius:16px;padding:20px;display:flex;flex-direction:column;gap:6px}
+.steps3 li::before{content:counter(s);width:28px;height:28px;border-radius:50%;display:grid;place-items:center;background:var(--ink);color:#fff;font:700 13px var(--sans);margin-bottom:6px}
+.steps3 b{font-size:17px;color:var(--ink);line-height:1.3}
+.steps3 span{font-size:15px;color:#55554F;line-height:1.5}
+.faq details{border-top:1px solid #E7E4DA;padding:16px 2px}
+.faq details:last-child{border-bottom:1px solid #E7E4DA}
+.faq summary{cursor:pointer;font:700 17px var(--sans);color:var(--ink);list-style:none;display:flex;justify-content:space-between;gap:16px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font-weight:400;font-size:22px;line-height:1;color:#66665F}
+.faq details[open] summary::after{content:"–"}
+.faq details p{margin-top:10px;font-size:16px;line-height:1.6;color:#4A4A45;max-width:75ch}
+.me{margin-top:88px}
+@media (max-width:900px){.steps3{grid-template-columns:1fr}}
