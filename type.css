@@ -2,14 +2,14 @@
    tight tracking; everything else in one sans; body copy in soft grey; generous space.
    Loaded last on every page. */
 :root{
-  --serif:"Newsreader",Georgia,"Times New Roman",serif;
+  --serif:var(--sans);
   --sans:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
   --mono:var(--sans);
   --text:rgba(22,22,24,.66);
 }
 body{font-family:var(--sans);font-weight:450;letter-spacing:-.006em}
-h1,h2,h3{font-family:var(--serif)!important;font-weight:400!important;color:#161618!important;text-wrap:balance}
-h1{letter-spacing:-.035em!important;line-height:1.02!important}
+h1,h2,h3{font-family:var(--sans)!important;font-weight:600!important;color:#161618!important;text-wrap:balance}
+h1{letter-spacing:-.04em!important;line-height:1.04!important}
 h2{letter-spacing:-.025em!important;line-height:1.12!important}
 h3{letter-spacing:-.015em!important;line-height:1.2!important}
 h1 em,h2 em,.intro h1 em,.about-hero h1 em{font-family:inherit!important;font-style:normal!important;font-weight:inherit!important;display:inline}
@@ -21,13 +21,13 @@ h1 em,h2 em,.intro h1 em,.about-hero h1 em{font-family:inherit!important;font-st
 .intro .lede{font-size:19px;line-height:1.5;color:var(--text);font-weight:500}
 .byline{font-size:14.5px;color:var(--text)}
 .jobs{gap:48px;padding-top:56px}
-.jobs h3{font-size:26px!important}
+.jobs h3{font-size:22px!important}
 .jobs p:last-child,.rules3 p,.steps3 span,.faq details p,.trust-foot,.me p,.demo-head p,.creds p:last-child,.travel p,.slide ul,.plain{color:var(--text)!important;font-weight:450}
 .job-when,.kicker,.k,.eyebrow{font:500 13px var(--sans)!important;letter-spacing:0!important;text-transform:none!important;color:rgba(22,22,24,.62)!important}
 .demo-head{margin-top:120px}
 .demo-head h2,.trust h2,.start h2,.faq h2{font-size:clamp(32px,3.6vw,44px)!important}
 .trust,.start,.faq{margin-top:120px}
-.rules3 h3,.steps3 b{font-family:var(--serif);font-weight:400;font-size:22px;letter-spacing:-.015em;color:#161618}
+.rules3 h3,.steps3 b{font-family:var(--sans);font-weight:600;font-size:19px;letter-spacing:-.015em;color:#161618}
 .rules3 li::before,.steps3 li::before{font-family:var(--sans)}
 .faq summary{font:500 17px var(--sans);letter-spacing:-.01em}
 .me{margin-top:120px}
@@ -67,3 +67,8 @@ body:not([data-page="home"]){padding:0 28px 40px}
 .deck,.page{max-width:1100px!important;margin-left:auto!important;margin-right:auto!important}
 .page{padding-top:56px!important}
 .sources{max-width:1100px;margin:0 auto}
+
+/* Final: one family, two weights. */
+*{font-family:var(--sans)}
+.intro h1{font-size:clamp(40px,5.4vw,68px)!important}
+.intro h1 em{color:rgba(22,22,24,.5)!important}
