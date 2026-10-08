@@ -80,3 +80,11 @@ body:not([data-page="home"]){padding:0 28px 40px}
 .demo-head{border-top:0;padding-top:0;margin-top:20px!important}
 .trust,.start,.faq,.me{margin-top:96px!important}
 .creds article{border-top:1px solid #E6E3DA;padding-top:24px}
+
+/* Byline as its own quiet band; demo intro gets room. */
+.byline{margin:96px auto 0;padding:28px 0;border-top:1px solid #E6E3DA;border-bottom:1px solid #E6E3DA;font-size:15px}
+.byline span a{margin-left:6px;font-weight:500;color:#161618;text-decoration:underline;text-underline-offset:3px}
+.demo-head{margin-top:96px!important}
+.demo-head h2{margin-bottom:10px!important}
+.demo .nav{margin-top:28px}
+.demo .context{margin:14px auto 22px;font-size:15px}
